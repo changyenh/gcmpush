@@ -91,7 +91,7 @@ function invokePush (message, node, identifiers) {
 	console.log(options);
 	 
 	function callback(error, response, body) {
-	  if (!error && response.statusCode == 202) {
+	  if (!error && response.statusCode == 200) {
 	    node.status({fill:"blue",shape:"dot",text:"Sent"});
 	    node.status({});
 	    
