@@ -86,14 +86,14 @@ function invokePush (message, node, identifiers) {
 	  url: 'https://gcm-http.googleapis.com/gcm/send',
 	  headers: {
 	    'Content-Type': 'application/json',
-	    'Authorization': SERVER_API_KEY//'key=AIzaSyC18n2hwjZVoXjq_BLi1Z0tGBhPXjpE3dw'
+	    'Authorization': 'key=' + SERVER_API_KEY//'key=AIzaSyC18n2hwjZVoXjq_BLi1Z0tGBhPXjpE3dw'
 	  },
 	  method : 'POST',
 	  json : true,
 	  body : {
-	    "data":{
+	    "data":message/*{
 	        "message": message
-	    },
+	    }*/,
 	    "to": identifiers
 	  }
 	};
