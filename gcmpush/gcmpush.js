@@ -85,7 +85,7 @@ function invokePush (message, node, identifiers) {
 	  json : true,
 	  body : {
 	    "data": message,
-	    "to": identifiers
+	    "to": JSON.stringify(identifiers)
 	  }
 	};
 	console.log(options);
