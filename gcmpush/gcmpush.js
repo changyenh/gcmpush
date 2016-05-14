@@ -36,7 +36,7 @@ function GCMPushNode(n) {
 	} else {
 		this.identifiers = null;
 	}
-
+	console.log(this.identifiers);
 
 	this.on("input", function(msg) {
 
@@ -48,11 +48,11 @@ function GCMPushNode(n) {
 		}
 		ids = this.identifiers.split(',');
 		//remove the whitespaces for each value.
-		idArr = [];
+		//idArr = [];
 		for(var i=0;i<ids.length;i++) {
 			ids[i] = ids[i].trim();
 		}
-
+		console.log(ids);
 		var message = msg.payload;
 
 		switch (this.notificationType) {
