@@ -36,14 +36,14 @@ function GCMPushNode(n) {
 	} else {
 		this.identifiers = null;
 	}
-	console.log(this.identifiers);
+	console.log('id:' + this.identifiers);
 
 	this.on("input", function(msg) {
 
 		var alert = msg.payload;
 		alert = alert.toString();
 
-		if (this.identifiers == null) {
+		if (typeof msg.identifiers !== 'undefined' && msg.identifiers != null) {
 			this.identifiers = msg.identifiers;
 		}
 		ids = this.identifiers.split(',');
@@ -52,7 +52,7 @@ function GCMPushNode(n) {
 		for(var i=0;i<ids.length;i++) {
 			ids[i] = ids[i].trim();
 		}
-		console.log(ids);
+		console.log('ids:' + ids);
 		var message = msg.payload;
 
 		switch (this.notificationType) {
