@@ -57,11 +57,6 @@ function GCMPushNode(n) {
 
 		var message = msg.payload;
 
-		//first pref to the mode sent from the message
-		this.mode = msg.mode || this.mode;
-
-		console.log("The mode is "+this.mode);
-
 		switch (this.notificationType) {
 			case "global":
 				invokePush(message,this,"/topics/global");
