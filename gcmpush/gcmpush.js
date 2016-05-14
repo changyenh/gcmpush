@@ -92,6 +92,7 @@ function invokePush (message, node, identifiers) {
 	    "to": identifiers
 	  }
 	};
+	console.log(options);
 	 
 	function callback(error, response, body) {
 	  if (!error && response.statusCode == 202) {
