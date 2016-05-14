@@ -60,7 +60,7 @@ function GCMPushNode(n) {
 				invokePush(message,this,"/topics/global");
 				break;
 			case "deviceid":
-				invokePush(message,this,this.identifiers);
+				invokePush(message,this,ids);
 				break;
 			default:
 				console.log("Invalid option. Please retry");
@@ -76,7 +76,7 @@ RED.nodes.registerType("gcmpush", GCMPushNode);
 
 function invokePush (message, node, identifiers) {
 	var options = {
-	  url: 'https://gcm-http.googleapis.com/gcm/send',
+	  url: 'https://android.googleapis.com/gcm/send',//'https://gcm-http.googleapis.com/gcm/send',
 	  headers: {
 	    'Content-Type': 'application/json',
 	    'Authorization': 'key=' + SERVER_API_KEY//'key=AIzaSyC18n2hwjZVoXjq_BLi1Z0tGBhPXjpE3dw'
@@ -85,7 +85,7 @@ function invokePush (message, node, identifiers) {
 	  json : true,
 	  body : {
 	    "data": message,
-	    "to": identifiers
+	    "registration_ids": identifiers
 	  }
 	};
 	console.log(options);
