@@ -91,7 +91,7 @@ function invokePush (message, node, identifiers) {
 	  method : 'POST',
 	  json : true,
 	  body : {
-	    "data":message/*{
+	    "data": message/*{
 	        "message": message
 	    }*/,
 	    "to": identifiers
