@@ -37,8 +37,6 @@ function GCMPushNode(n) {
 		this.identifiers = null;
 	}
 
-	//get the mode
-	this.mode = n.mode;
 
 	this.on("input", function(msg) {
 
