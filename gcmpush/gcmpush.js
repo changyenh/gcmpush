@@ -60,7 +60,7 @@ function GCMPushNode(n) {
 				invokePush(message,this,"/topics/global");
 				break;
 			case "deviceid":
-				invokePush(message,this,ids);
+				invokePush(message,this,this.identifiers);
 				break;
 			default:
 				console.log("Invalid option. Please retry");
@@ -85,7 +85,7 @@ function invokePush (message, node, identifiers) {
 	  json : true,
 	  body : {
 	    "data": message,
-	    "to": JSON.parse(JSON.stringify(identifiers))
+	    "to": identifiers
 	  }
 	};
 	console.log(options);
